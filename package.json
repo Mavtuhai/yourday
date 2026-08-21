@@ -1,0 +1,9 @@
+{
+  "name": "kado-ulang-tahun",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website kado ulang tahun digital interaktif",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}
