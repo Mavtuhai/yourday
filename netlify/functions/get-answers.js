@@ -20,7 +20,11 @@ exports.handler = async (event) => {
   }
 
   try {
-    const store = getStore("kado-jawaban");
+    const store = getStore({
+      name: "kado-jawaban",
+      siteID: process.env.NETLIFY_SITE_ID,
+      token: process.env.NETLIFY_BLOBS_TOKEN
+    });
     const { blobs } = await store.list();
     const records = [];
     for (const b of blobs) {
