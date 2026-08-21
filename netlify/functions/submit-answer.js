@@ -26,7 +26,11 @@ exports.handler = async (event) => {
   };
 
   try {
-    const store = getStore("kado-jawaban");
+    const store = getStore({
+      name: "kado-jawaban",
+      siteID: process.env.NETLIFY_SITE_ID,
+      token: process.env.NETLIFY_BLOBS_TOKEN
+    });
     await store.setJSON(record.id, record);
     return {
       statusCode: 200,
